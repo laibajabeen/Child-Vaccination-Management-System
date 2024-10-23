@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('children-5833685_1920.jpg');
+    background-image: url('children-6628343_1920.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,9 +39,8 @@
     z-index: -1;
 }
 
-.main {
-    height: auto;
-    width: 400px;
+.role-container {
+    width: 900px;
     background-color: white;
     padding: 40px;
     border-radius: 20px;
@@ -52,149 +51,171 @@ h2 {
     text-align: center;
     color: #333;
     margin-bottom: 10px;
+    font-size: 2em;
 }
 
 .subtitle {
     text-align: center;
     color: #666;
-    margin-bottom: 30px;
-    font-size: 0.9em;
+    margin-bottom: 40px;
+    font-size: 1.1em;
 }
 
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 0.9em;
-    transition: border-color 0.3s ease;
-}
-
-.input-group input:focus {
-    outline: none;
-    border-color: #4a90e2;
-}
-
-.remember-forgot {
+.role-options {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.role-card {
+    flex: 1;
+    max-width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.parent-card {
+    border: 2px solid rgba(255, 0, 0, 0.3);
+}
+
+.staff-card {
+    border: 2px solid rgba(0, 0, 255, 0.3);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.parent-card .icon-circle {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff4444;
+}
+
+.staff-card .icon-circle {
+    background-color: rgba(0, 0, 255, 0.1);
+    color: #4444ff;
+}
+
+.role-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.role-card p {
+    color: #666;
     margin-bottom: 20px;
     font-size: 0.9em;
 }
 
-.forgot-link {
-    color: #4a90e2;
-    text-decoration: none;
+.features-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 25px;
 }
 
-.login-btn {
+.features-list li {
+    margin-bottom: 10px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features-list i {
+    color: #4CAF50;
+}
+
+.role-btn {
     width: 100%;
     padding: 12px;
-    background-color: #4a90e2;
-    color: white;
     border: none;
     border-radius: 8px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    color: white;
 }
 
-.login-btn:hover {
-    background-color: #357abd;
+.parent-card .role-btn {
+    background-color: #ff4444;
 }
 
-.divider {
+.staff-card .role-btn {
+    background-color: #4444ff;
+}
+
+.parent-card .role-btn:hover {
+    background-color: #ff2222;
+}
+
+.staff-card .role-btn:hover {
+    background-color: #2222ff;
+}
+
+.back-to-login {
     text-align: center;
-    margin: 20px 0;
-    position: relative;
+    margin-top: 20px;
 }
 
-.divider::before,
-.divider::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 45%;
-    height: 1px;
-    background-color: #ddd;
-}
-
-.divider::before {
-    left: 0;
-}
-
-.divider::after {
-    right: 0;
-}
-
-.divider span {
-    background-color: white;
-    padding: 0 10px;
+.back-to-login a {
     color: #666;
-    font-size: 0.9em;
-}
-
-.social-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.social-btn {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.social-btn:hover {
-    background-color: #f5f5f5;
-}
-
-.social-btn.google {
-    color: #db4437;
-}
-
-.social-btn.facebook {
-    color: #4267B2;
-}
-
-.signup-link {
-    text-align: center;
-    font-size: 0.9em;
-    color: #666;
-}
-
-.signup-link a {
-    color: #4a90e2;
     text-decoration: none;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
 }
 
-.signup-link a:hover {
-    text-decoration: underline;
+.back-to-login a:hover {
+    color: #333;
 }
 
 /* Responsive design */
-@media (max-width: 480px) {
-    .main {
+@media (max-width: 960px) {
+    .role-container {
         width: 90%;
         padding: 20px;
     }
-    
-    .social-buttons {
+
+    .role-options {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .role-card {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .role-card {
+        padding: 20px;
     }
 }
